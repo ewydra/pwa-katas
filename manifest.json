@@ -34,7 +34,7 @@
     "purpose": "any maskable"
   }
   ],
-  "start_url": "/pwa-katas",
+  "start_url": "/pwa-katas/",
   "display": "standalone",
   "theme_color": "#FA8D00",
   "background_color": "#ffffff"
