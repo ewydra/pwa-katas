@@ -1,0 +1,11 @@
+{
+  "files": {
+    "main.js": "/pwa-katas/static/js/main.cc4fdeba.js",
+    "service-worker.js": "/pwa-katas/service-worker.js",
+    "index.html": "/pwa-katas/index.html",
+    "main.cc4fdeba.js.map": "/pwa-katas/static/js/main.cc4fdeba.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.cc4fdeba.js"
+  ]
+}
