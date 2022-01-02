@@ -37,7 +37,7 @@ export function TodoItemForm({
   return (
     <FormWrapper>
       <SectionWrapper>
-        <InputLabel for="title">Title:</InputLabel>
+        <InputLabel htmlFor="title">Title:</InputLabel>
         <input
           name="title"
           value={title}
@@ -45,7 +45,7 @@ export function TodoItemForm({
         />
       </SectionWrapper>
       <SectionWrapper>
-        <InputLabel for="description">Description:</InputLabel>
+        <InputLabel htmlFor="description">Description:</InputLabel>
         <textarea
           name="description"
           value={description}

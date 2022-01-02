@@ -1,5 +1,5 @@
 import React from "react";
-import { DeviceOrientation, TodoList } from "./components";
+import { DeviceOrientation, QrCodeScanner, TodoList } from "./components";
 import { NetworkStatus } from "./components/NetworkStatus";
 
 function App() {
@@ -10,6 +10,8 @@ function App() {
       <TodoList />
       <hr />
       <DeviceOrientation />
+      <hr />
+      <QrCodeScanner />
     </div>
   );
 }

@@ -12,10 +12,7 @@ const ButtonsWrapper = styled.div`
   display: flex;
   align-items: flex-start;
   margin-top: 16px;
-
-  & > button {
-    margin-right: 8px;
-  }
+  gap: 8px;
 `;
 
 export function TodoItem({ item, removeTodoItem, editTodoItem }) {
