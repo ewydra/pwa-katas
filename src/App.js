@@ -1,5 +1,5 @@
 import React from "react";
-import { TodoList } from "./components";
+import { DeviceOrientation, TodoList } from "./components";
 import { NetworkStatus } from "./components/NetworkStatus";
 
 function App() {
@@ -8,6 +8,8 @@ function App() {
       <NetworkStatus />
       <hr />
       <TodoList />
+      <hr />
+      <DeviceOrientation />
     </div>
   );
 }
