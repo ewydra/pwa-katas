@@ -1,6 +1,11 @@
 import React from "react";
-import { DeviceOrientation, QrCodeScanner, TodoList } from "./components";
-import { NetworkStatus } from "./components/NetworkStatus";
+import {
+  NetworkStatus,
+  DeviceOrientation,
+  PointOfInterest,
+  QrCodeScanner,
+  TodoList,
+} from "./components";
 
 function App() {
   return (
@@ -12,6 +17,8 @@ function App() {
       <DeviceOrientation />
       <hr />
       <QrCodeScanner />
+      <hr />
+      <PointOfInterest />
     </div>
   );
 }

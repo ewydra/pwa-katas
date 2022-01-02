@@ -1,6 +1,5 @@
 import { BrowserMultiFormatReader, NotFoundException } from "@zxing/library";
-import { useEffect, useMemo, useRef } from "react";
-import { useCallback, useState } from "react/cjs/react.development";
+import { useEffect, useMemo, useRef, useCallback, useState } from "react";
 import styled from "styled-components";
 
 const ButtonsWrapper = styled.div`
@@ -14,6 +13,7 @@ export function QrCodeScanner() {
   const [videoDevices, setVideoDevices] = useState([]);
   const [selectedDeviceId, setSelectedDeviceId] = useState("");
   const [resultList, setResultList] = useState([]);
+  const [isRecording, setRecording] = useState(false);
 
   const qrCodeReader = useMemo(() => new BrowserMultiFormatReader(), []);
 
@@ -46,6 +46,7 @@ export function QrCodeScanner() {
   );
 
   const startRecording = useCallback(() => {
+    setRecording(true);
     qrCodeReader.decodeFromVideoDevice(
       selectedDeviceId,
       videoRef.current,
@@ -54,6 +55,7 @@ export function QrCodeScanner() {
   }, [handleDecode, qrCodeReader, selectedDeviceId]);
 
   const resetRecording = useCallback(() => {
+    setRecording(false);
     qrCodeReader.reset();
     setResultList([]);
   }, [qrCodeReader]);
@@ -75,7 +77,7 @@ export function QrCodeScanner() {
           ))}
         </select>
       </ButtonsWrapper>
-      <video ref={videoRef} height="300"></video>
+      <video ref={videoRef} height={isRecording ? "300" : "0"}></video>
       <ul>
         {resultList.map((result) => (
           <li key={result}>{result}</li>
