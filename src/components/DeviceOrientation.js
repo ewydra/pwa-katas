@@ -7,9 +7,9 @@ export function DeviceOrientation() {
   const [gamma, setGamma] = useState("-");
 
   const setDeviceOrientation = useCallback((event) => {
-    setAlpha(event.alpha);
-    setBeta(event.beta);
-    setGamma(event.gamma);
+    setAlpha(event.alpha.toFixed(1));
+    setBeta(event.beta.toFixed(1));
+    setGamma(event.gamma.toFixed(1));
   }, []);
 
   const requestDeviceOrientation = useCallback(() => {
@@ -46,9 +46,9 @@ export function DeviceOrientation() {
   return (
     <>
       <p>Device orientation</p>
-      <div>α: {alpha.toFixed(1)}°</div>
-      <div>β: {beta.toFixed(1)}°</div>
-      <div>γ: {gamma.toFixed(1)}°</div>
+      <div>α (alpha): {alpha}°</div>
+      <div>β (beta): {beta}°</div>
+      <div>γ (gamma): {gamma}°</div>
     </>
   );
 }
