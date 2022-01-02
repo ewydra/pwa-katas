@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.js": "/pwa-katas/static/js/main.7b2d6344.js",
+    "main.js": "/pwa-katas/static/js/main.1e9f825c.js",
     "service-worker.js": "/pwa-katas/service-worker.js",
     "index.html": "/pwa-katas/index.html",
-    "main.7b2d6344.js.map": "/pwa-katas/static/js/main.7b2d6344.js.map"
+    "main.1e9f825c.js.map": "/pwa-katas/static/js/main.1e9f825c.js.map"
   },
   "entrypoints": [
-    "static/js/main.7b2d6344.js"
+    "static/js/main.1e9f825c.js"
   ]
 }
