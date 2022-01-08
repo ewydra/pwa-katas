@@ -1,12 +1,6 @@
 import { BrowserMultiFormatReader, NotFoundException } from "@zxing/library";
 import { useEffect, useMemo, useRef, useCallback, useState } from "react";
-import styled from "styled-components";
-
-const ButtonsWrapper = styled.div`
-  display: flex;
-  gap: 8px;
-  margin-bottom: 8px;
-`;
+import { Button, FlexWrapper, Select } from ".";
 
 export function QrCodeScanner() {
   const videoRef = useRef(null);
@@ -62,10 +56,10 @@ export function QrCodeScanner() {
 
   return (
     <div>
-      <ButtonsWrapper>
-        <button onClick={startRecording}>Start</button>
-        <button onClick={resetRecording}>Reset</button>
-        <select
+      <FlexWrapper>
+        <Button onClick={startRecording}>Start</Button>
+        <Button onClick={resetRecording}>Reset</Button>
+        <Select
           placeholder="Select video device..."
           value={selectedDeviceId}
           onChange={(e) => setSelectedDeviceId(e.target.value)}
@@ -75,8 +69,8 @@ export function QrCodeScanner() {
               {label}
             </option>
           ))}
-        </select>
-      </ButtonsWrapper>
+        </Select>
+      </FlexWrapper>
       <video ref={videoRef} height={isRecording ? "300" : "0"}></video>
       <ul>
         {resultList.map((result) => (

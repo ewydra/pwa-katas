@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
+import { Button } from "..";
 import { TodoItemContent } from "./TodoItemContent";
 
 const ItemWrapper = styled.div`
@@ -28,10 +29,10 @@ export function TodoItem({ item, removeTodoItem, editTodoItem }) {
           editItem={editTodoItem}
         />
         <ButtonsWrapper>
-          <button onClick={() => removeTodoItem(item)}>Remove</button>
-          <button disabled={isEditMode} onClick={() => setEditMode(true)}>
+          <Button onClick={() => removeTodoItem(item)}>Remove</Button>
+          <Button disabled={isEditMode} onClick={() => setEditMode(true)}>
             Edit
-          </button>
+          </Button>
         </ButtonsWrapper>
       </ItemWrapper>
     </li>

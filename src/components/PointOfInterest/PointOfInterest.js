@@ -1,15 +1,17 @@
 import { useState, useCallback } from "react";
-import styled from "styled-components";
+import { Button, FlexWrapper } from "..";
 import { Map } from "./Map";
-
-const ContentWrapper = styled.div`
-  margin-top: 8px;
-`;
 
 export function PointOfInterest() {
   const [isLocationLoaded, setLocationLoaded] = useState(false);
   const [hasLocationError, setLocationError] = useState(false);
   const [coordinates, setCoordinates] = useState(null);
+
+  const resetLocation = useCallback(() => {
+    setLocationLoaded(false);
+    setLocationError(false);
+    setCoordinates(null);
+  }, []);
 
   const getCurrentLocation = useCallback(() => {
     if ("geolocation" in navigator) {
@@ -27,15 +29,16 @@ export function PointOfInterest() {
 
   return (
     <>
-      <button onClick={getCurrentLocation}>
-        Get nearest point of interest
-      </button>
-      <ContentWrapper>
-        {hasLocationError && (
-          <span>Geolocation is not supported by your browser</span>
-        )}
-        {isLocationLoaded && <Map coordinates={coordinates} />}
-      </ContentWrapper>
+      <FlexWrapper>
+        <Button onClick={getCurrentLocation}>
+          Get nearest point of interest
+        </Button>
+        {isLocationLoaded && <Button onClick={resetLocation}>Reset</Button>}
+      </FlexWrapper>
+      {hasLocationError && (
+        <span>Geolocation is not supported by your browser</span>
+      )}
+      {isLocationLoaded && <Map coordinates={coordinates} />}
     </>
   );
 }

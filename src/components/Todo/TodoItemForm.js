@@ -1,5 +1,6 @@
 import { useCallback, useState } from "react";
 import styled from "styled-components";
+import { Button, Input, TextArea } from "..";
 
 const FormWrapper = styled.div`
   display: flex;
@@ -38,7 +39,7 @@ export function TodoItemForm({
     <FormWrapper>
       <SectionWrapper>
         <InputLabel htmlFor="title">Title:</InputLabel>
-        <input
+        <Input
           name="title"
           value={title}
           onChange={(event) => setTitle(event.target.value)}
@@ -46,13 +47,13 @@ export function TodoItemForm({
       </SectionWrapper>
       <SectionWrapper>
         <InputLabel htmlFor="description">Description:</InputLabel>
-        <textarea
+        <TextArea
           name="description"
           value={description}
           onChange={(event) => setDescription(event.target.value)}
         />
       </SectionWrapper>
-      <button onClick={handleSave}>Save</button>
+      <Button onClick={handleSave}>Save</Button>
     </FormWrapper>
   );
 }

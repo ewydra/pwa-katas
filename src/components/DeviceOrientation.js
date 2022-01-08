@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
+import { Button } from ".";
 
 export function DeviceOrientation() {
   const [isPermissionGranted, setPermissionGranted] = useState(false);
@@ -35,17 +36,11 @@ export function DeviceOrientation() {
   }, [isPermissionGranted, setDeviceOrientation]);
 
   if (!isPermissionGranted) {
-    return (
-      <>
-        <p>Device orientation</p>
-        <button onClick={requestDeviceOrientation}>Turn on</button>
-      </>
-    );
+    return <Button onClick={requestDeviceOrientation}>Turn on</Button>;
   }
 
   return (
     <>
-      <p>Device orientation</p>
       <div>α (alpha): {alpha}°</div>
       <div>β (beta): {beta}°</div>
       <div>γ (gamma): {gamma}°</div>

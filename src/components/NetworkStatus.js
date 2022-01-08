@@ -1,4 +1,9 @@
 import { useEffect, useState } from "react";
+import styled from "styled-components";
+
+const StatusIndicator = styled.span`
+  color: ${({ isOnline }) => (isOnline ? "green" : "red")};
+`;
 
 export function NetworkStatus() {
   const [isOnline, setIsOnline] = useState(navigator.onLine);
@@ -16,5 +21,12 @@ export function NetworkStatus() {
     };
   }, []);
 
-  return <div>Your status: {isOnline ? "Online" : "Offline"}</div>;
+  return (
+    <div>
+      Your status:{" "}
+      <StatusIndicator isOnline={isOnline}>
+        {isOnline ? "Online" : "Offline"}
+      </StatusIndicator>
+    </div>
+  );
 }
